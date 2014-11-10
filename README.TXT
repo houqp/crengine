@@ -1,7 +1,7 @@
 CoolReader 3 - free e-book reader
 (c) Vadim Lopatin, 1998-2009
 
-LICENSE: All source codes (except thirdparty directory) 
+LICENSE: All source codes (except thirdparty directory)
 are provided under the terms of GNU GPL license, version 2
 
 Source codes are available at sourceforge:
@@ -20,7 +20,7 @@ tinydict   - small library for .dict file format support
 tools      - miscellaneous configuration files
 android    - Android port
 
-External dependencies: 
+External dependencies:
 
 common: zlib, libpng, libjpeg, freetype
 cr3gui/xcb: libxcb, fontconfig
@@ -173,9 +173,9 @@ make
 *** QT Build under Windows ***
 ==============================
 
-    Using QT SDK  
+    Using QT SDK
 
-Environment setup: 
+Environment setup:
 - Download and install QT SDK, git, cmake, msys
 - Copy contents of git and cmake dirs to QT/mingw/
 - Copy make.exe from msys/bin to QT/mingw/bin
@@ -195,6 +195,13 @@ cmake -D GUI=QT -D CMAKE_BUILD_TYPE=Release -G "Visual Studio 9 2008" -D USE_QT_
 cmake -D GUI=QT -D CMAKE_BUILD_TYPE=Release -G "Visual Studio 10" -D USE_QT_ZLIB=1  -D MAX_IMAGE_SCALE_MUL=2 -D DOC_DATA_COMPRESSION_LEVEL=3 -D DOC_BUFFER_SIZE=0x1500000 -D CMAKE_INSTALL_PREFIX=dist ..
 to disable console, use /SUBSYSTEM:WINDOWS linker option instead of /SUBSYSTEM:CONSOLE
 
+For QT5, use GUI=QT5 instead of GUI=QT
+For building Qt5 app from QtCreator remove -G (generator) parameter:
+	Release build:
+		-D GUI=QT5 -D CMAKE_BUILD_TYPE=Release -D CMAKE_INSTALL_PREFIX=dist ..
+	Debug build:
+		-D GUI=QT5 -D CMAKE_BUILD_TYPE=Debug -D CMAKE_INSTALL_PREFIX=dist ..
+
 It will put built cr3.exe and all necessary distribution files to directory qtbuild/dist.
 You need also add following DLLs to this directory in order to get cr3.exe working:
 - mingwm10.dll
@@ -210,11 +217,11 @@ You need also add following DLLs to this directory in order to get cr3.exe worki
 ./configure -prefix /Developer/Qt -opensource -static -release -arch x86 -arch x86_64 \
 -no-accessibility -no-stl -no-qt3support -qt-zlib -no-gif -no-libtiff -qt-libpng -qt-freetype -no-libmng -qt-libjpeg -no-nis -no-cups -no-iconv -no-pch -no-dbus -no-opengl -no-fontconfig \
 -no-xmlpatterns -no-multimedia -no-phonon -no-phonon-backend -no-audio-backend -no-openssl \
--no-gtkstyle -no-svg -no-webkit -no-javascript-jit -no-script -no-scripttools -no-declarative 
+-no-gtkstyle -no-svg -no-webkit -no-javascript-jit -no-script -no-scripttools -no-declarative
 #make Core and GUI libraries
 make sub-src
 #make symlinks from `pad` to /Developer/Qt for bin, include, lib, src dirs
-#É
+#Ã‰
 
 #inside cr3 directory
 #configure using cmake
